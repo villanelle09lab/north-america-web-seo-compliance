@@ -1,0 +1,4 @@
+interface:
+  display_name: "北美网站 SEO 与合规工作流"
+  short_description: "竞品取证、法规核验、合规文案与产品落地的串行工作流"
+  default_prompt: "使用 $north-america-web-seo-compliance 从当前阶段继续执行北美网站 SEO 与合规工作流，并在缺少网址或关键业务事实时主动向我询问。"
