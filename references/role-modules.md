@@ -111,7 +111,7 @@ Turn Role 2 evidence plus current official primary sources into the target site'
 4. Mandatory English copy standard: directly usable operational copy or an explicitly labeled counsel-review legal draft.
 5. Red flag: likely enforcement, ranking, accessibility, payment, safety, trust, or launch consequence.
 
-Also retain Requirement ID, Copy ID, jurisdiction, applicability, source, owner, legal status, priority, and QA acceptance fields from the master schema.
+Also retain 编号, Copy ID, jurisdiction, applicability, source, owner, legal status, priority, and QA acceptance fields from the master schema.
 
 ### Mandatory coverage
 
@@ -166,7 +166,7 @@ For every material, include required real inputs, allowed placeholders, prohibit
 
 ### Product-quality gate
 
-- Every product item traces to a master Requirement ID.
+- Every product item traces to a master 编号.
 - Every displayed string traces to a Copy ID.
 - Pure policy-writing tasks are not mislabeled as UI development.
 - Every interactive control has error and edge states plus an acceptance test.

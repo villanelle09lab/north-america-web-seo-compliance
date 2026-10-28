@@ -40,6 +40,7 @@ Generate these artifacts with the bundled Python tool `scripts/compliance_workfl
 - Legal policies and conclusions require qualified counsel approval. AI may prepare issue lists, structured drafts, operational copy, and implementation requirements.
 - Mock data must be labeled `SAMPLE`, `PLACEHOLDER`, or `TEST ONLY` and kept out of production.
 - For data retention, storage location, and cross-border transfers: minimize retention (per-data-type periods enforced in code), disclose clearly, transfer lawfully (GDPR SCC/adequacy for the EU; CCPA/CPRA for the US; PIPL for China-involved processing; other rules per jurisdiction), and never break Googlebot crawling (access and consent overlays are client-side; crawlers receive the same HTML).
+- Track corrections explicitly: wherever a row amends an earlier source or a prior version of this checklist, record it in a dedicated `对参考文件的修正/备注` field. Self-review must catch omitted or wrongly-stated requirements (e.g. a missing content-rating meta tag, or a gate that lets users proceed without confirming age) and flag them, not silently patch them.
 
 ## Start-of-task behavior · 开始任务时
 
@@ -72,6 +73,8 @@ Every master-checklist row carries a `Part` tag so the final deliverable splits 
 3. **Part 3 — 运营排版 (operations self-service)**: ops-owned — static copy (footer labels, page microcopy, FAQ/support scripts, contact fields), policy-input facts for legal, content-review records, and sample/mock data.
 
 Each part is a filtered view of the one master checklist; nothing lives outside it. Hand each part to its owner without re-explaining the whole run.
+
+Order the three parts by **execution sequence, not by topic**: engineering-first items (no UI needed), then UI+engineering items, then operations copy. Open each part with a one-line collaboration instruction (who hands what to whom, and which Copy IDs the later parts reference). The deliverable is a **work order, not a reference matrix**: every row carries a phase-prefixed ID (e.g. `D-`/`U-`/`C-`), a `P0`/`P1` priority, a testable acceptance criterion, and a `对参考文件的修正/备注` note wherever a row corrects or extends an earlier source or version.
 
 ## Ordered workflow · 有序流程
 
@@ -132,9 +135,9 @@ Gate: a human reviewer checks missing evidence and confirms that competitor prac
 
 Activate Role 3.
 
-Merge only applicable findings into the master checklist. Each row must answer: where it appears, why it applies, what must be built or written, the English copy or copy placeholder, who owns it, what evidence supports it, and how QA proves it works.
+Merge only applicable findings into the master checklist. Each row is an **executable work order** and must carry: a phase-prefixed ID (`D-`/`U-`/`C-`), priority (`P0` = launch blocker, `P1`), a module group (`A`/`B`/`C`), an item name, a numbered step-by-step spec of what to build or write, the compliance/SEO basis, a testable acceptance criterion, the English copy or copy placeholder, the owner, supporting evidence, and a `对参考文件的修正/备注` note wherever the row corrects or extends an earlier finding or source. Group rows by module, not by dimension.
 
-Draft concise operational copy directly. For Terms, Privacy, Cookie, DMCA, content-safety policies, subscriptions, refunds, and dispute clauses, create a structured counsel-review draft with placeholders and issue flags rather than claiming it is publication-ready.
+Draft concise operational copy directly. For Terms, Privacy, Cookie, DMCA, content-safety policies, subscriptions, refunds, and dispute clauses, produce a structured counsel-review draft following the Policy document structure in `references/schemas.md`: standard section order, `[BRACKETS]` placeholders, structured tables (data categories / legal bases / recipients / retention), negative "do not" lists, jurisdiction carve-outs, and a closing `Notes for Legal Review` decision log. Never claim it is publication-ready.
 
 Copy snippets taken from competitors are evidence samples, not final copy. Preserve provenance and write a new version for the target product.
 
@@ -152,7 +155,7 @@ Do not turn a policy statement into a product requirement unless a user-visible 
 
 Continue Role 4, Deliverable B.
 
-Export master-checklist rows tagged `运营排版` into **Part 3 — operations pack**. Include static copy, policy inputs, FAQ and support scripts, author/reviewer evidence, company/contact fields, content review records, and clearly labeled sample data needed for development or review environments.
+Export master-checklist rows tagged `运营排版` into **Part 3 — operations pack**. For every copy row, produce a usable English baseline directly (not just a placeholder), and reference any fuller draft file (e.g. `已起草：xxx.docx`). Include static copy, policy inputs, FAQ and support scripts, author/reviewer evidence, company/contact fields, content review records, and clearly labeled sample data needed for development or review environments. Keep counsel-review drafts (Terms/Privacy/Cookie/data-retention) as separate inputs to the checklist, not mixed into the executable rows.
 
 Never propose a fabricated author, expert, North American address, testimonial, review, or compliance certification as production material.
 
@@ -177,7 +180,7 @@ A complete run produces:
 2. A locked competitor sample with classification and evidence boundaries.
 3. Per-site evidence records and a comparative audit.
 4. A current official-source and counsel-question matrix.
-5. One self-contained master execution checklist with unique Requirement IDs and Copy IDs.
+5. One self-contained master execution work order with unique phase-prefixed 编号 (`D-`/`U-`/`C-`) and Copy IDs.
 6. Three derived output parts from that checklist: Part 1 technical backlog, Part 2 UI/design backlog, and Part 3 operations pack.
 7. A P0 launch QA record and an update plan.
 8. A completed coverage-matrix review confirming that every required role and requested control was handled or explicitly marked not applicable.
