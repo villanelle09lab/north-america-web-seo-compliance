@@ -41,7 +41,7 @@ Cover, when applicable:
 
 Use one row per independently testable obligation or recommendation:
 
-`Requirement ID / Copy ID / Module or page / Trigger and audience / Jurisdiction / Applicability condition / Evidence class / Compliance or SEO type / Requirement / Mandatory English copy or placeholder / Dynamic variables / UI behavior / Frontend/backend implementation / Operations material / Official source / Competitor evidence / Target current state / Gap / Red flag or non-compliance risk / Priority / Owner / Legal status / QA acceptance / Not-applicable reason / Last verified`
+`Requirement ID / Copy ID / Module or page / Trigger and audience / Jurisdiction / Applicability condition / Evidence class / Compliance or SEO type / Part / Requirement / Mandatory English copy or placeholder / Dynamic variables / UI behavior / Frontend/backend implementation / Operations material / Official source / Competitor evidence / Target current state / Gap / Red flag or non-compliance risk / Priority / Owner / Legal status / QA acceptance / Not-applicable reason / Last verified`
 
 Priority meanings:
 
@@ -58,6 +58,12 @@ Legal status values:
 - `Counsel approved`
 - `Implementation deviates from approved text`
 - `Not applicable`
+
+Part (execution owner) values:
+
+- `技术排版` — technical implementation (engineering).
+- `UI 设计排版` — UI/design collaboration.
+- `运营排版` — operations self-service.
 
 ## Copy standard
 

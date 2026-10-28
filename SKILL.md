@@ -17,7 +17,7 @@ Run the work as a gated sequence. Do not jump from a competitor list directly to
 3. **Role 3 UX 文案 + 法务合规专员**：把核实发现与现行官方要求转成主清单和原创英文文案。
 4. **Role 4 Web 产品经理**：把清单转成 UI/前端 backlog 和运营文案包。
 
-流程分 8 个阶段（Stage 0–7）：范围摄入 → 竞品筛选 → 逐站取证 → 官方源基线 → 主清单与文案 → UI backlog → 运营文案 → 上线 QA。最终交付为 PDF；法律结论一律留律师，不编造事实。
+流程分 8 个阶段（Stage 0–7）：范围摄入 → 竞品筛选 → 逐站取证 → 官方源基线 → 主清单与文案 → 三部分打包（技术排版 / UI 设计排版 / 运营排版）→ 上线 QA。最终交付为 PDF；法律结论一律留律师，不编造事实。
 
 ## Output format · 输出格式
 
@@ -62,6 +62,16 @@ Execute the four roles in order. Do not collapse away their separate responsibil
 4. `Role 4 — International Web product manager`: converts approved checklist rows into a UI/frontend development backlog and an operations copy/mock-material pack.
 
 Each role receives the prior role's approved output. If a required handoff is missing, stop and request it rather than silently filling the gap.
+
+## Three-part output · 三部分输出
+
+Every master-checklist row carries a `Part` tag so the final deliverable splits into three self-contained packages, each handed to a different owner:
+
+1. **Part 1 — 技术排版 (technical implementation)**: engineering-owned — technical SEO (robots/sitemap/canonical/hreflang/schema), crawler handling, consent storage and GPC, regional routing, authentication, backend flows, analytics events, and code-level accessibility.
+2. **Part 2 — UI 设计排版 (UI/design collaboration)**: design-owned — visual components and interaction (access/consent gate, cookie banner, privacy-choice panel, footer legal navigation, disclosure banners, forms), buttons, states, error paths, PC/mobile behavior, and visual accessibility.
+3. **Part 3 — 运营排版 (operations self-service)**: ops-owned — static copy (footer labels, page microcopy, FAQ/support scripts, contact fields), policy-input facts for legal, content-review records, and sample/mock data.
+
+Each part is a filtered view of the one master checklist; nothing lives outside it. Hand each part to its owner without re-explaining the whole run.
 
 ## Ordered workflow · 有序流程
 
@@ -130,19 +140,19 @@ Copy snippets taken from competitors are evidence samples, not final copy. Prese
 
 Gate: AI performs a row-by-row self-check, then a human reviews applicability, omissions, real-world facts, and legal escalation items.
 
-### Stage 5 — UI and frontend backlog view · UI 与前端 backlog
+### Stage 5 — Part 1 & 2 · 技术与 UI 设计排版 backlog
 
 Activate Role 4, Deliverable A.
 
-Export rows that require product, design, frontend, backend, consent management, SEO infrastructure, or QA work. Include triggers, states, regional logic, device behavior, authentication state, storage/consent behavior, accessibility, Copy ID, dependencies, analytics events when authorized, and acceptance criteria.
+Export master-checklist rows tagged `技术排版` into **Part 1 — technical backlog** and rows tagged `UI 设计排版` into **Part 2 — design backlog**. Each item includes triggers, states, regional logic, device behavior, authentication state, storage/consent behavior, accessibility, Copy ID, dependencies, analytics events when authorized, and acceptance criteria.
 
 Do not turn a policy statement into a product requirement unless a user-visible or operational capability must change.
 
-### Stage 6 — Operations copy and mock-material view · 运营文案与素材视图
+### Stage 6 — Part 3 · 运营排版 pack
 
 Continue Role 4, Deliverable B.
 
-Export rows owned by operations, content, support, trust and safety, or legal coordination. Include static copy, policy inputs, FAQ and support scripts, author/reviewer evidence, company/contact fields, content review records, and clearly labeled sample data needed for development or review environments.
+Export master-checklist rows tagged `运营排版` into **Part 3 — operations pack**. Include static copy, policy inputs, FAQ and support scripts, author/reviewer evidence, company/contact fields, content review records, and clearly labeled sample data needed for development or review environments.
 
 Never propose a fabricated author, expert, North American address, testimonial, review, or compliance certification as production material.
 
@@ -168,7 +178,7 @@ A complete run produces:
 3. Per-site evidence records and a comparative audit.
 4. A current official-source and counsel-question matrix.
 5. One self-contained master execution checklist with unique Requirement IDs and Copy IDs.
-6. A UI/development backlog view and an operations copy/mock-material view derived from that checklist.
+6. Three derived output parts from that checklist: Part 1 technical backlog, Part 2 UI/design backlog, and Part 3 operations pack.
 7. A P0 launch QA record and an update plan.
 8. A completed coverage-matrix review confirming that every required role and requested control was handled or explicitly marked not applicable.
 

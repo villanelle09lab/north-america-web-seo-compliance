@@ -41,6 +41,7 @@ MASTER_CHECKLIST_COLUMNS = [
     "Applicability condition",
     "Evidence class",
     "Compliance or SEO type",
+    "Part",
     "Requirement",
     "Mandatory English copy or placeholder",
     "Dynamic variables",
@@ -69,6 +70,12 @@ LEGAL_STATUSES = (
     "Counsel approved",
     "Implementation deviates from approved text",
     "Not applicable",
+)
+
+PARTS = (
+    "技术排版",
+    "UI 设计排版",
+    "运营排版",
 )
 
 
@@ -270,6 +277,7 @@ def main(argv=None) -> int:
     p_report.add_argument("--rows", type=Path, required=True)
     p_report.add_argument("--out", type=Path, required=True)
     p_report.add_argument("--title", default="Compliance Execution Checklist")
+    p_report.add_argument("--part", help="Filter rows to one part (技术排版 / UI 设计排版 / 运营排版)")
 
     args = parser.parse_args(argv)
 
@@ -280,6 +288,8 @@ def main(argv=None) -> int:
     rows = json.loads(Path(args.rows).read_text(encoding="utf-8"))
     if not isinstance(rows, list):
         sys.exit("rows.json must contain a JSON array")
+    if args.part:
+        rows = [r for r in rows if isinstance(r, dict) and r.get("Part") == args.part]
     save_report(rows, args.out, args.title)
     return 0
 

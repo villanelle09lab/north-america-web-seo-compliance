@@ -39,6 +39,8 @@ Use this matrix for the final self-review. `Explicit` means the requirement appe
 | UI/frontend requirement number and component | Role 4 Deliverable A | Explicit |
 | Trigger, buttons, states, and PC/mobile behavior | Role 4 Deliverable A | Explicit |
 | Copy variables and Copy ID | Role 4 Deliverable A | Explicit |
+| Three-part output split (technical / UI-design / operations) | `SKILL.md` Three-part output; Stages 5–6 | Explicit |
+| `Part` tag on every master-checklist row | `schemas.md` master checklist | Explicit |
 | Cookie storage, crawler, schema technical points | Role 4 Deliverable A | Explicit, conditional |
 | Legal-text preparation list | Role 4 Deliverable B | Explicit, conditional |
 | E-E-A-T author/entity material | Role 4 Deliverable B | Explicit |
